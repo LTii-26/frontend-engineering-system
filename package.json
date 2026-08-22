@@ -1,0 +1,14 @@
+{
+  "name": "frontend-engineering-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "一个从零开始构建的前端工程实践项目。",
+  "packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621",
+  "engines": {
+    "node": ">=22.14.0",
+    "pnpm": ">=11.22.0"
+  },
+  "scripts": {
+    "check": "pnpm -r --if-present check"
+  }
+}
