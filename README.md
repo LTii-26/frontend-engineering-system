@@ -1,5 +1,4 @@
-
-# frontend-engineering-system2
+# frontend-engineering-system
 
 这是一个从空目录开始搭建的前端工程管理实践项目。
 
