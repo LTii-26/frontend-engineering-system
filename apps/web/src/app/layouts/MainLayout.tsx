@@ -5,9 +5,10 @@ export function MainLayout() {
     <div>
       {/* header这一块儿相当于所有页面都有的内容，因此单独抽取到layout组件里面 */}
       <header>
-        <strong>frontend-engineering-system2</strong>
+        <strong>frontend-engineering-system</strong>
         <nav aria-label="Main navigation">
           <NavLink to="/">Home</NavLink>
+          <NavLink to="/users">Users</NavLink>
           <NavLink to="/settings">Settings</NavLink>
         </nav>
       </header>

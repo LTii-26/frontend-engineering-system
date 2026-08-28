@@ -1,9 +1,8 @@
-import { createBrowserRouter } from "react-router"
-
-import { MainLayout } from "@/app/layouts/MainLayout"
 import { RequireAuth } from "@/app/router/RequireAuth"
-import { HomePage } from "@/pages/home"
+import { MainLayout } from "@/app/layouts/MainLayout"
+import { createBrowserRouter } from "react-router"
 import { NotFoundPage } from "@/pages/not-found"
+import { HomePage } from "@/pages/home"
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +17,14 @@ export const router = createBrowserRouter([
         // 表示这一组子路由先经过 RequireAuth
         Component: RequireAuth,
         children: [
+          {
+            path: "users",
+            lazy: async () => {
+              const { UserListPage } = await import("@/pages/users")
+
+              return { Component: UserListPage }
+            },
+          },
           {
             path: "settings",
             // 懒加载
