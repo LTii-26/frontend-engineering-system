@@ -14,6 +14,10 @@ function readScenario(value: string | null): UserListScenario {
   return "success"
 }
 
+const activeScenarioClassName = "rounded-md bg-brand-600 px-3 py-2 text-sm font-medium text-white"
+const inactiveScenarioClassName =
+  "rounded-md bg-surface-100 px-3 py-2 text-sm font-medium text-surface-900"
+
 export function UserListPage() {
   // 就是读取 parmas
   // 读取当前 URL 的查询参数，例如 /users?scenario=empty → { scenario: "empty" }
@@ -34,27 +38,32 @@ export function UserListPage() {
     <main>
       <PageTitle title="用户" subtitle="Users are loaded through the shared request layer." />
 
-      <section className="rounded-[--radius-card] border border-surface-100 bg-white p-6 shadow-sm">
+      <section className="rounded-[--radius-card] border border-surface-100 bg-surface-0 p-6 shadow-sm">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
           {/* 模拟了三个场景：成功、数据为空、错误 */}
           {/* 通过传递不同的 URL 查询参数来实现 */}
           <nav aria-label="用户列表场景" className="flex flex-wrap items-center gap-2">
             <Link
-              className="rounded-md bg-brand-600 px-3 py-2 text-sm font-medium text-white"
+              aria-current={scenario === "success" ? "page" : undefined}
+              className={
+                scenario === "success" ? activeScenarioClassName : inactiveScenarioClassName
+              }
               to="/users"
             >
               成功
             </Link>
 
             <Link
-              className="rounded-md bg-surface-100 px-3 py-2 text-sm font-medium text-surface-900"
+              aria-current={scenario === "empty" ? "page" : undefined}
+              className={scenario === "empty" ? activeScenarioClassName : inactiveScenarioClassName}
               to="/users?scenario=empty"
             >
               数据为空
             </Link>
 
             <Link
-              className="rounded-md bg-surface-100 px-3 py-2 text-sm font-medium text-surface-900"
+              aria-current={scenario === "error" ? "page" : undefined}
+              className={scenario === "error" ? activeScenarioClassName : inactiveScenarioClassName}
               to="/users?scenario=error"
             >
               错误
