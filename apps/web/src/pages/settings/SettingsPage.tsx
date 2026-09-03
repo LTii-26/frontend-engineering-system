@@ -1,4 +1,4 @@
-import { Card, PageTitle, getButtonClassName } from "@/shared/ui"
+import { Card, PageTitle, getButtonClassName } from "@frontend-engineering-system/ui"
 import type { Theme } from "@/app/providers/theme-context"
 import { useTheme } from "@/app/providers/useTheme"
 import { env } from "@/shared/config"

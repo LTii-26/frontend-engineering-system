@@ -12,6 +12,7 @@
     "typecheck": "tsc -b"
   },
   "dependencies": {
+    "@frontend-engineering-system/ui": "workspace:*",
     "@frontend-engineering-system/utils": "workspace:*",
     "@tanstack/react-query": "^5.102.6",
     "react": "^19.2.7",

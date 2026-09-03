@@ -1,4 +1,4 @@
-import { Button, Card, PageTitle, getButtonClassName } from "@/shared/ui"
+import { Button, Card, PageTitle, getButtonClassName } from "@frontend-engineering-system/ui"
 import { getUsers, UserStatusBadge } from "@/entities/user"
 import type { UserListScenario } from "@/entities/user"
 import { Link, useSearchParams } from "react-router"

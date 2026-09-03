@@ -1,4 +1,4 @@
-import { Badge } from "@/shared/ui"
+import { Badge } from "@frontend-engineering-system/ui"
 
 import type { UserStatus } from "../model"
 
