@@ -1,3 +1,5 @@
+import { readBoolean } from "@frontend-engineering-system/utils"
+
 type AppEnv = "development" | "staging" | "production"
 
 type EnvConfig = {
@@ -8,10 +10,6 @@ type EnvConfig = {
   isDevelopment: boolean
   isStaging: boolean
   isProduction: boolean
-}
-
-function readBoolean(value: "true" | "false") {
-  return value === "true"
 }
 
 // 导出了一个 env 环境对象
