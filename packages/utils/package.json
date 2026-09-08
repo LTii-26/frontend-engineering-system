@@ -21,11 +21,14 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "pack:check": "npm pack --dry-run",
-    "prepublishOnly": "pnpm lint && pnpm typecheck && pnpm build && pnpm pack:check"
+    "test:unit": "vitest run",
+    "test:unit:watch": "vitest",
+    "test:unit:coverage": "vitest run --coverage",
+    "prepublishOnly": "pnpm lint && pnpm typecheck && pnpm test:unit && pnpm build && pnpm pack:check"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
@@ -34,9 +37,11 @@
   "devDependencies": {
     "@frontend-engineering-system/eslint-config": "workspace:*",
     "@frontend-engineering-system/ts-config": "workspace:*",
-    "typescript": "~6.0.2",
+    "@vitest/coverage-v8": "^4.1.10",
     "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
-    "typescript-eslint": "^8.61.0"
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.61.0",
+    "vitest": "^4.1.10"
   }
 }
