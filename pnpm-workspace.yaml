@@ -1,5 +1,7 @@
 packages:
-  - "packages/*"
   - "apps/*"
+  - "packages/*"
 allowBuilds:
   esbuild: true
+catalog:
+  vitest: ^4.1.10
